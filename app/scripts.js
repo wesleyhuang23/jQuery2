@@ -16,7 +16,7 @@ $(document).ready(function(){
 
     $('#newItemInput').val('');
       $('#newList').append(
-        '<a href="#finish" class=" id="item">' +
+        '<a href="#finish" class="" id="item">' +
         '<li class="list-group-item">' +
         '<h3>' + task.task + '</h3>' +
         '<span class="arrow pull-right">' +
@@ -26,12 +26,13 @@ $(document).ready(function(){
         '</a>'
       );
   };
+
   $('#newTaskForm').slideToggle('fast', 'linear');
   //slides the window up
   $('#saveNewItem').on('click', function(e){
     e.preventDefault();
     var task = $('#newItemInput').val().trim();
-    add(task);
+    addTask(task);
   });
   //
   $('#add-todo').on('click', function(){
@@ -46,10 +47,10 @@ $(document).ready(function(){
 
   var advanceTask = function(task) {
     var modified = task.innerText.trim();
-    for(var i = 0; i<listo.length; i++) {
+    for(var i = 0; i < listo.length; i++) {
       if(listo[i].task === modified){
         if(listo[i].id === 'new'){
-          listo[i].id = 'inprogress';
+          listo[i].id = 'inProgress';
         } else if (listo[i].id === 'inProgress'){
           listo[i].id = 'archived';
         } else {
@@ -75,8 +76,8 @@ $(document).ready(function(){
 
   $(document).on('click', '#inProgress', function (e) {
     e.preventDefault();
-    var task =this;
-    task.id = "arhived";
+    var task = this;
+    task.id = "archived";
     var changeIcon = task.outerHTML.replace('glyphicon-arrow-right', 'glyphicon-remove');
     advanceTask(task);
     $('#archivedList').append(changeIcon);
@@ -85,6 +86,6 @@ $(document).ready(function(){
   $(document).on('click', "#archived", function (e){
     e.preventDefault();
     var task = this;
-    advancedTask(task);
+    advanceTask(task);
   });
 });

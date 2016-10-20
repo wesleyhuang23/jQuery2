@@ -23,6 +23,17 @@
 
             <!-- to-do main container -->
             <section class="todo-main-container">
+                <div class="progess-box">
+                    <h3>In Progress</h3>
+                    <ul class="list-group" id="currentList"></ul>
+                </div>
+                <div></div>
+
+                <div class="progress-box">
+                    <h3>Complete</h3>
+                    <ul class="list-group" id="archivedList"></ul>
+                </div>
+
                 <div class="progress-box" id="newList">
                     <h3>New To Dos</h3>
                 </div>
@@ -38,18 +49,18 @@
                     <img id="cancel" src="./img/icons/cross.png" alt="close form icon">
                     <input id="newItemInput" class="todo-title-input form-input" type="text" placeholder="Ti-Do title">
                     <button id="saveNewItem class=" complete-todo-button>Add To Do</button>
-                    </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- FOOTER -->
-                <footer class="todo-footer">
-                    <img id="add-todo" class="add-todo-button show-add-todo" src="./img/icons/add-button.png" alt="add new todo">
-                </footer>
+            <!-- FOOTER -->
+            <footer class="todo-footer">
+                <img id="add-todo" class="add-todo-button show-add-todo" src="./img/icons/add-button.png" alt="add new todo">
+            </footer>
 
-                <!--jQuery-->
-                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                <!--INclude your script file here -->
-                <script src="app/scripts.js"></script>
-            </main>
-        </body>
-    </html>
+            <!--jQuery-->
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <!--INclude your script file here -->
+            <script src="app/scripts.js"></script>
+        </main>
+    </body>
+</html>
